@@ -3,6 +3,7 @@
 
 import json
 
+
 def load_from_json_file(filename):
 
     """Open the file in read ('r') mode using the with"""
