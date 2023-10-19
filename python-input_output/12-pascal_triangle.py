@@ -1,7 +1,5 @@
 #!/usr/bin/python3
-"""
-12-pascaltriangle
-"""
+"""12-pascaltriangle"""
 
 
 def pascal_triangle(n):
