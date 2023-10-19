@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-"""10-student module"""
+"""9-student module """
 
 
 class Student:
@@ -12,30 +12,35 @@ class Student:
         last_name (str): The last name of the student.
         age (int): The age of the student.
     """
+
     def __init__(self, first_name, last_name, age):
         """
-        Initializes a new Student object.
+        Convert the Student object to a dictionary.
 
         Args:
-            first_name (str): The first name of the student.
-            last_name (str): The last name of the student.
-            age (int): The age of the student.
+            attrs (list, optional): A list of attributes
+            to include in the dictionary.
+            If None, all attributes will be included. Default is None.
 
         Returns:
-            None
+            dict: A dictionary containing the student's information.
         """
         self.age = age
         self.last_name = last_name
         self.first_name = first_name
-                
-    def to_json(self, attrs=None):
-        """If no specific attributes are provided, 
-        return a dictionary with all attributes   """
-        
-        if attrs is None:
 
-             return self.__dict__
-        
+    def to_json(self, attrs=None):
+        """
+        Convert the Student object to a dictionary.
+
+        Returns:
+            dict: A dictionary containing the student's information.
+        """
+        if attrs is None:
+            return self.__dict__
         else:
-         
-            return {key: value for key, value in self.__dict__.items() if key in attrs}
+            my_dict = {}
+            for key in attrs:
+                if hasattr(self, key):
+                    my_dict[key] = getattr(self, key)
+        return my_dict
