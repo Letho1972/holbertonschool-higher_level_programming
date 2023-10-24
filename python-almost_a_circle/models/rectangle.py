@@ -100,7 +100,7 @@ class Rectangle(Base):
             .format(self.id, self.__x, self.__y, self.__width, self.__height)
 
     def update(self, *args, **kwargs):
-        '''A public method that assigns an argument to each attribute.'''
+        """A public method that assigns an argument to each attribute"""
         if args:
             if len(args) >= 1:
                 self.id = args[0]
