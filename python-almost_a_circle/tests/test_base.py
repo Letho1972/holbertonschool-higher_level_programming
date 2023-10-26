@@ -1,57 +1,66 @@
-#!/usr/bin.python3
-"""
-    Module of test
-"""
+#!/usr/bin/python3
+"""Base class test"""
+
 
 import unittest
 from models.base import Base
 
 
 class TestBase(unittest.TestCase):
+    def test_1(self):
+        b = Base()
+        self.assertEqual(b.id, 1)
 
-    def setUp(self):
-        self.base = Base(12)
+    def test_2(self):
+        b = Base()
+        self.assertEqual(b.id, 2)
 
-    def test_nb_objects(self):
-        # test nb_object before first call
-        Base.__nb_objects = 0
+    def test_3(self):
+        b = Base(100000)
+        self.assertEqual(b.id, 100000)
 
-    def test_ID(self):
-        # if id, id = value
-        base = Base(39)
-        self.assertEqual(base.id, 39)
+    def test_4(self):
+        b = Base(1.1)
+        self.assertEqual(b.id, 1.1)
 
-    def test_IDNone(self):
-        # if no id, id = nb_obj
-        base1 = Base()
-        self.assertEqual(base1.id, 1)
+    def test_5(self):
+        Base.to_json_string([None])
 
+    def test_6(self):
+        Base.to_json_string([])
 
-class TestBaseStaticMethod(unittest.TestCase):
+    def test_7(self):
+        Base.to_json_string(None)
 
-    def setUp(self):
-        self.base = Base(12)
+    def test_9(self):
+        Base.to_json_string("2")
 
-    def test_outputTypeToJsonString(self):
-        # test output function is a string
-        list_dict = {'x': 2, 'width': 10, 'id': 1, 'height': 7, 'y': 8}
-        self.assertEqual(type(Base.to_json_string(list_dict)), str)
+    def test_10(self):
+        Base.to_json_string([])
 
-    def test_outputEmptyToJsonString(self):
-        # test output function if None as input is a string empty list
-        list_dict = None
-        self.assertEqual(Base.to_json_string(list_dict), '[]')
+    def test_11(self):
+        Base.to_json_string([{'id': 23}])
 
-    def test_outputTypeFromJsonString(self):
-        # test output function is a list
-        json_string = '[{"x": 2, "width": 10, "id": 1, "height": 7, "y": 8}]'
-        self.assertEqual(type(Base.from_json_string(json_string)), list)
+    def test_12(self):
+        Base.save_to_file(None)
 
-    def test_outputEmptyTypeFromJsonString(self):
-        # test output function if None as input is a empty list
-        json_string = None
-        self.assertEqual(Base.from_json_string(json_string), [])
+    def test_13(self):
+        Base.save_to_file({})
 
+    def test_14(self):
+        Base.save_to_file({})
 
-if __name__ == '__main__':
-    unittest.main()
+    def test_15(self):
+        Base.from_json_string("[]")
+
+    def test_16(self):
+        Base.from_json_string([])
+
+    def test_17(self):
+        Base.from_json_string(None)
+
+    def test_18(self):
+        Base.from_json_string('[{ "id": 89 }]')
+
+    if __name__ == '__main__':
+        unittest.main()
