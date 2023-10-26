@@ -2,17 +2,12 @@
 """Base class test"""
 
 
-# Import modules.
-import json
 import unittest
-# Import the classes (Base, Rectangle, Square).
 from models.base import Base
-from models.rectangle import Rectangle
-from models.square import Square
 
 
 class TestBase(unittest.TestCase):
-"""a class to test"""
+    """a class to test"""
 
     def test_1(self):
         b = Base()

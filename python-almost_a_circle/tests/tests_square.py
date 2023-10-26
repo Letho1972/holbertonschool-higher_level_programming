@@ -7,7 +7,7 @@ from models.square import Square
 
 
 class TestBase(unittest.TestCase):
-"""a class to test"""
+    """a class to test"""
 
     def test_0(self):
         Square(1)
