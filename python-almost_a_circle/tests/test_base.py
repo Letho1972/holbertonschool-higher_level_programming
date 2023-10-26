@@ -7,8 +7,6 @@ from models.base import Base
 
 
 class TestBase(unittest.TestCase):
-    """a class to test"""
-
     def test_1(self):
         b = Base()
         self.assertEqual(b.id, 1)
