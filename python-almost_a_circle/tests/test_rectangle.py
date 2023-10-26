@@ -7,6 +7,8 @@ from models.rectangle import Rectangle
 
 
 class TestBase(unittest.TestCase):
+"""a class to test"""
+
     def test_1(self):
         Rectangle(1, 2)
 
