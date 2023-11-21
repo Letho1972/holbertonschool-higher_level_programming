@@ -6,6 +6,6 @@ CREATE TABLE IF NOT EXISTS second_table (
     score int
 );
 INSERT INTO second_table (id, name, score) VALUE (1, 'John', 10);
-INSERT INTO second_table (id, name, score) VALUE (1, 'Alex', 3);
-INSERT INTO second_table (id, name, score) VALUE (1, 'Bob', 14);
-INSERT INTO second_table (id, name, score) VALUE (1, 'George', 8);
+INSERT INTO second_table (id, name, score) VALUE (2, 'Alex', 3);
+INSERT INTO second_table (id, name, score) VALUE (3, 'Bob', 14);
+INSERT INTO second_table (id, name, score) VALUE (4, 'George', 8);
