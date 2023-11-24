@@ -24,8 +24,9 @@ if __name__ == "__main__":
 
     rows = cursor.fetchall()
 
-    for row in rows:
-        print(row)
+    city_names = ', '.join(row[0] for row in rows)
+
+    print(city_names)
 
     cursor.close()
     database.close()
