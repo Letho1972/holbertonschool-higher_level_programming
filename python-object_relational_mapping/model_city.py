@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Write a Python file similar to model_state.py named model_city.py 
+Write a Python file similar to model_state.py named model_city.py
 that contains the class definition of a City.
 """
 
@@ -23,4 +23,3 @@ class City(Base):
     id = Column(Integer, primary_key=True, nullable=False, autoincrement=True)
     name = Column(String(128), nullable=False)
     state_id = Column(Integer, ForeignKey('states.id', ondelete='CASCADE'), nullable=False)
-
